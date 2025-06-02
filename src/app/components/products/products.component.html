@@ -1,0 +1,70 @@
+<div class="container mt-4">
+    <h1>Our Products</h1>
+    
+    <div class="mb-4">
+        <h5>Total Products: <span class="badge bg-secondary">{{totalProducts}}</span></h5>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+        <h5 class="mb-0">Filter Products</h5>
+        </div>
+        <div class="card-body">
+            <div class="row g-3"> 
+                <!-- Category Filter -->
+                <div class="col-md-4">  
+                    <label class="form-label"><strong>Category</strong></label>
+                    <select class="form-select" #categorySelect>
+                        <option selected>All</option>
+                        <option>Electronics</option>
+                        <option>Clothing</option>
+                        <option>Books</option>
+                    </select>
+                </div>
+
+                <!-- Product Title Search -->
+                <div class="col-md-4">
+                    <label class="form-label"><strong>Product Title</strong></label>
+                    <input type="text" class="form-control" #productTitleInput placeholder="Search by title...">
+                </div>
+
+                <!-- Price Filter -->
+                <div class="col-md-4">
+                    <label class="form-label"><strong>Max Price ($)</strong></label>
+                    <input type="number" class="form-control" #maxPriceInput placeholder="Enter max price">
+                </div>
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-primary w-100 py-2"  (click)="updateFilters(categorySelect.value, productTitleInput.value, maxPriceInput.value)">
+                    Apply Filters</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+        <h5 class="mb-0">Current Filter Values</h5>
+        </div>
+        <div class="card-body">
+            <div class="row g-3"> 
+                <!-- Category Filter -->
+                <div class="col-md-4">  
+                    <label class="form-label"><strong>Category</strong></label>
+                    <p>{{(category==null)? "All" : category}}</p>
+                </div>
+
+                <!-- Product Title Search -->
+                <div class="col-md-4">
+                    <label class="form-label"><strong>Product Title</strong></label>
+                    <p>{{(productTitle==null)? "Not specified" : productTitle}}</p>
+                </div>
+
+                <!-- Price Filter -->
+                <div class="col-md-4">
+                    <label class="form-label"><strong>Max Price ($)</strong></label>
+                    <p>{{(maxPrice==null)? "Not specified":maxPrice}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
