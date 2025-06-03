@@ -4,7 +4,6 @@ import { ProductsComponent } from './components/products/products.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 
-
 @Component({
   selector: 'app-root',
   imports: [NavbarComponent , ProductsComponent , ProductsListComponent,FooterComponent],
